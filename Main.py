@@ -99,6 +99,12 @@ class DoublyCircularLinkedList:
 
     def get_previous_next(self, index) -> list:
         # Write code here
+        if index < 0 or index >= self.count:
+            return -1
+        curr_node = self.head
+        for ind in range(index):
+            curr_node = curr_node.next
+        return [curr_node.previous.data, curr_node.next.data]
 
 
 # Do not change the following code
